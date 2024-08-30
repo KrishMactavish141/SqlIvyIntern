@@ -1,0 +1,52 @@
+You have been given two tables:
+Salary contains the employee_id, name and salary of every employee.
+Swipe contains the employee_id, activity_type and activity_time of the employees.
+create table salary(
+    employee_id int,
+    name varchar(100),
+    salary_per_hour_$ float
+);
+
+INSERT INTO salary(employee_id, name, salary_per_hour_$) VALUES
+(1, 'Jeremy', 16.78),
+(2, 'Nicole', 25.87),
+(3, 'Naomi', 22.45),
+(4, 'Lyanne', 19.27);
+
+
+
+CREATE TABLE swipe (
+    employee_id INT,
+    activity_type VARCHAR(10),
+    activity_time DATETIME
+);
+
+
+INSERT INTO swipe (employee_id, activity_type, activity_time) VALUES
+(1, 'login', '2024-07-23 08:00:00'),
+(1, 'logout', '2024-07-23 12:00:00'),
+(1, 'login', '2024-07-23 13:00:00'),
+(1, 'logout', '2024-07-23 17:00:00'),
+(2, 'login', '2024-07-23 09:00:00'),
+(2, 'logout', '2024-07-23 11:00:00'),
+(2, 'login', '2024-07-23 12:00:00'),
+(2, 'logout', '2024-07-23 15:00:00'),
+(1, 'login', '2024-07-24 08:30:00'),
+(1, 'logout', '2024-07-24 12:30:00'),
+(2, 'login', '2024-07-24 09:30:00'),
+(2, 'logout', '2024-07-24 10:30:00'),
+(3, 'login', '2024-07-24 09:00:00'),
+(3, 'logout', '2024-07-24 13:45:00'),
+(3, 'login', '2024-07-24 14:30:00'),
+(3, 'logout', '2024-07-24 17:30:00'),
+(4, 'login', '2024-07-23 10:30:00'),
+(4, 'logout', '2024-07-23 15:00:00'),
+(4, 'login', '2024-07-23 16:30:00'),
+
+(4, 'logout', '2024-07-23 19:00:00'); 
+
+This two tables are taken from the database of a startup company, whose employees are tracked by a card punching machine.
+An employee has to punch his card every time he comes in or goes out of the door. The company pays the employees on an hourly basis according to the total working hours of the employee. The working hour is calculated as the total hours an employee was inside the office.
+
+Q: Find the total salary of each employee on a daily basis. 
+The format should be : NAME | ACTIVITY_DATE | SALARY

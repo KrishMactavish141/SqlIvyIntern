@@ -1,0 +1,32 @@
+You have been given two tables:
+
+Sales have the columns sales_id, make, type, style, cost_$, purchased_date and salesman_id
+Salesman have the columns salesman_id and name.
+
+The tables show you the details of the sales made by 4 salesmen of a car showroom. According to company policy, each salesman receives a bonus, according to the following criteria:
+
+bonus = 10% of total sales + Car make bonus
+
+The car make bonus is different for each make, which is shown in this table.
+Honda = 200 per sale
+Ford = 350 per sale
+Audi = 400 per sale
+Nissan = 120 per sale
+Toyota = 270 per sale
+BMW = 600 per sale
+Mercedes = 590 per sale
+
+But there is also another business policy that if you do not meet the target for each quarter,
+then you will only receive the car make bonus for that quarter.
+
+Quarter 1 - 100000
+Quarter 2 - 60000
+Quarter 3 - 1000000
+Quarter 4 - 1000000
+
+January, February, and March (Q1) April, May, and June (Q2) July, August, and September (Q3) October, November, and December (Q4)
+
+ 
+Q: Find the total bonus received by each salesman in each quarter.
+The final query should have the name of the salesperson in rows and quarters in columns.
+Format : name| q1 | q2 | q3 | q4

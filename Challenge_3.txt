@@ -1,0 +1,4 @@
+Using the table from challenge 1,
+
+Q: List the employees who have the second highest salary and the third lowest salary in their respective departments.     Give the answers in a single table. The format of the table should be,
+department_name | second_highest | third_lowest

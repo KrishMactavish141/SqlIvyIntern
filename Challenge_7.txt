@@ -1,0 +1,59 @@
+CREATE TABLE Sales (
+    product_id INT,
+    period_start DATE,
+    period_end DATE,
+    average_daily_sales INT,
+    PRIMARY KEY (product_id, period_start, period_end),
+    FOREIGN KEY (product_id) REFERENCES Product(product_id)
+);
+
+
+INSERT INTO Sales (product_id, period_start, period_end, average_daily_sales) VALUES
+(1, '2018-11-15', '2019-01-15', 120),
+(2, '2019-03-01', '2019-03-31', 80),
+(5, '2020-01-01', '2020-12-31', 5),
+(4, '2018-07-01', '2018-12-31', 70),
+(3, '2019-06-15', '2020-01-15', 120),
+(1, '2020-02-01', '2020-06-30', 120),
+(2, '2020-07-01', '2020-12-31', 80),
+(3, '2019-08-01', '2019-12-31', 45),
+(4, '2019-01-01', '2019-06-30', 25),
+(5, '2018-10-01', '2019-03-31', 15);
+
+
+CREATE TABLE Product (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(255)
+);
+
+
+INSERT INTO Product (product_id, product_name) VALUES
+(1, 'Mouse'),
+(2, 'Keyboard'),
+(3, 'Ram'),
+(4, 'Processor'),
+(5, 'Graphic Card');
+
+/*
+Product_id is the primary key for both the table.
+Period_start and period_end indicates the start and end date for sales period, both dates are inclusive.
+The average_daily_sales column holds the average daily sales amount of the items for the period.
+
+The company wants yearly sales report for all its products.
+Write an SQL query to report the Total sales amount of each item for each year,
+with corresponding product name, product_id, product_name and report_year.
+Dates of the sales years are between 2018 to 2020. Return the result table ordered by product_id and report_year.
+
+For example:
+XYZ was sold over two distinct periods. The first period was from August 1, 2018, to December 31, 2018.
+During this time, XYZ had an average daily sales amount of $90. For these 153 days, the total sales amounted to $13,770 (153 days * $90).
+
+The second period spanned from January 1, 2019, to December 31, 2019.
+In this period, the average daily sales increased to $100. Over the 365 days of 2019, the total sales reached $36,500 (365 days * $100).
+
+Output Example :
+product_id | product_name | report_year | total_amount
+1              XYZ               2018             13770
+1               XYZ              2019            36500
+
+*/

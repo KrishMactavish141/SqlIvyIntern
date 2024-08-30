@@ -1,0 +1,20 @@
+An edtech company has decided to hire from their own institution for a data analyst post. Everyone who applied were subjected to a skill test in the first round. Now for the second screening round, the details of the students who passed the first round were taken out from company's database which is further broken up into three tables.
+
+Students: Roll_No | Name
+Scores: Student_ID | Subject1 | Subject2 | Subject3 | Subject4 | Subject5 | Subject6
+Subjects: ID | Name | Pass_Marks
+
+Only the students who passed all the six subjects will be considered for the interview round. Moreover, out of the students who passed, they will be ranked according to their total percentage score and called in according to that order.
+But the company is also curious about the students who are not considered for hiring and wants to know about the subjects that they failed in.
+
+The output table should have the Roll_no and name of each student and the overall percentage_marks scored by them. Then there should be a column named failed_subject which will contain a comma separated list of all the subjects a student failed in and then a column named status, which will tell us either the candidate has passed the screening test or not.
+
+The output should order the names of all the hired candidates in descending order of their marks, while the failed students can be ordered in any way.
+
+Assumptions:-
+1) The sequence of subjects in scores table match with the sequential id from subjects table.
+2) There is an option between subject5 and subject6. If one student has taken both of them, consider the marks which is higher between the two for the total percentage.
+
+output table:
+
+Roll_No | Name | Percentage_marks | Failed_subjects | Status

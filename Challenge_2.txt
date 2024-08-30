@@ -1,0 +1,4 @@
+Use the same tables from challenge 1.
+
+
+Q: Find out the names of the departments which has less than 2 employees. The final result table should have department_name and count_of_employees.
